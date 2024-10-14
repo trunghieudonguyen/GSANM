@@ -1,0 +1,65 @@
+[Sat Oct 05 03:37:12.611031 2024] [mpm_prefork:notice] [pid 295] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Sat Oct 05 03:37:12.613946 2024] [core:notice] [pid 295] AH00094: Command line: '/usr/sbin/apache2'
+[Sat Oct 05 04:26:40.313568 2024] [:error] [pid 299] [client 172.18.0.1:44304] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Mon Oct 07 01:25:08.252727 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Oct 07 01:25:08.262386 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 07 01:25:08.262928 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 07 07:31:32.664732 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Oct 07 07:31:32.670791 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 07 07:31:32.671144 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 07 14:11:38.394316 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Oct 07 14:11:38.399043 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 07 14:11:38.399530 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 07 14:57:18.681452 2024] [mpm_prefork:notice] [pid 302] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 07 14:57:18.689650 2024] [core:notice] [pid 302] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 07 15:37:31.513462 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Oct 07 15:37:31.523489 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 07 15:37:31.523866 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 07 15:41:45.527293 2024] [:error] [pid 304] [client 172.18.0.1:60846] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Tue Oct 08 01:06:03.685968 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Oct 08 01:06:03.690191 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Tue Oct 08 01:06:03.690503 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Tue Oct 08 02:25:27.006132 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Oct 08 02:25:27.012090 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Tue Oct 08 02:25:27.013538 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Tue Oct 08 03:24:24.260963 2024] [core:warn] [pid 286] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Oct 08 03:24:24.266080 2024] [mpm_prefork:notice] [pid 286] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Tue Oct 08 03:24:24.266531 2024] [core:notice] [pid 286] AH00094: Command line: '/usr/sbin/apache2'
+[Wed Oct 09 03:15:23.855890 2024] [mpm_prefork:notice] [pid 295] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Wed Oct 09 03:15:23.856431 2024] [core:notice] [pid 295] AH00094: Command line: '/usr/sbin/apache2'
+[Wed Oct 09 03:17:32.229980 2024] [:error] [pid 308] [client 172.18.0.1:53294] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Wed Oct 09 05:57:33.603762 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Oct 09 05:57:33.614392 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Wed Oct 09 05:57:33.614732 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Wed Oct 09 06:49:57.154194 2024] [core:warn] [pid 298] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Oct 09 06:49:57.162911 2024] [mpm_prefork:notice] [pid 298] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Wed Oct 09 06:49:57.163246 2024] [core:notice] [pid 298] AH00094: Command line: '/usr/sbin/apache2'
+[Wed Oct 09 12:08:07.691557 2024] [mpm_prefork:notice] [pid 294] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Wed Oct 09 12:08:07.697473 2024] [core:notice] [pid 294] AH00094: Command line: '/usr/sbin/apache2'
+[Wed Oct 09 14:30:14.999921 2024] [:error] [pid 300] [client 172.18.0.1:38246] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Thu Oct 10 09:03:11.017835 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Oct 10 09:03:11.059345 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Thu Oct 10 09:03:11.059792 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Thu Oct 10 15:00:00.274782 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Oct 10 15:00:00.280751 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Thu Oct 10 15:00:00.281887 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Oct 11 07:44:57.514141 2024] [mpm_prefork:notice] [pid 290] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Fri Oct 11 07:44:57.515453 2024] [core:notice] [pid 290] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Oct 11 09:18:50.592678 2024] [:error] [pid 308] [client 172.18.0.1:43316] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Fri Oct 11 14:38:31.709117 2024] [core:warn] [pid 297] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Oct 11 14:38:31.716750 2024] [mpm_prefork:notice] [pid 297] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Fri Oct 11 14:38:31.717252 2024] [core:notice] [pid 297] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Oct 11 14:55:36.511052 2024] [mpm_prefork:notice] [pid 282] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Fri Oct 11 14:55:36.511718 2024] [core:notice] [pid 282] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Oct 11 16:39:13.110287 2024] [:error] [pid 308] [client 172.18.0.1:52122] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Fri Oct 11 16:39:16.126608 2024] [:error] [pid 308] [client 172.18.0.1:52122] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Mon Oct 14 01:41:50.116251 2024] [mpm_prefork:notice] [pid 294] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 14 01:41:50.118374 2024] [core:notice] [pid 294] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 14 02:14:21.754510 2024] [:error] [pid 300] [client 172.18.0.1:54260] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Mon Oct 14 02:32:32.963150 2024] [core:warn] [pid 306] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Oct 14 02:32:32.976731 2024] [mpm_prefork:notice] [pid 306] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 14 02:32:32.977360 2024] [core:notice] [pid 306] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 14 06:35:02.770871 2024] [mpm_prefork:notice] [pid 289] AH00163: Apache/2.4.25 (Debian) configured -- resuming normal operations
+[Mon Oct 14 06:35:02.772368 2024] [core:notice] [pid 289] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Oct 14 07:02:31.286588 2024] [:error] [pid 299] [client 172.18.0.1:53436] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php
+[Mon Oct 14 07:02:34.098247 2024] [:error] [pid 299] [client 172.18.0.1:53436] PHP Notice:  Constant DVWA_WEB_PAGE_TO_ROOT already defined in /var/www/html/dvwa/includes/DBMS/MySQL.php on line 9, referer: http://localhost:8080/setup.php

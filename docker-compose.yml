@@ -1,0 +1,222 @@
+
+
+services:
+  elasticsearch:
+    build:
+      context: elasticsearch/
+      args:
+        elk_version: ${elk_version}
+    container_name: elasticsearch
+    volumes:
+      - type: bind
+        source: ./elasticsearch/config/elasticsearch.yml
+        target: /usr/share/elasticsearch/config/elasticsearch.yml
+        read_only: false
+      - type: volume
+        source: elasticsearch
+        target: /usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    healthcheck:
+      test: ["CMD", "curl --silent --fail localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+    environment:
+      ES_JAVA_OPTS: "-Xmx1024m -Xms1024m"
+      ELASTIC_PASSWORD: DzxTaAG2MDb1KjZneNFQ
+      discovery.type: single-node
+    networks:
+      - elk
+
+  logstash:
+    build:
+      context: logstash/
+      args:
+        elk_version: ${elk_version}
+    container_name: logstash
+    volumes:
+      - type: bind
+        source: ./logstash/config/logstash.yml
+        target: /usr/share/logstash/config/logstash.yml
+        read_only: false
+      - type: bind
+        source: ./logstash/pipeline
+        target: /usr/share/logstash/pipeline
+        read_only: false
+    ports:
+      - "5000:5000"
+      - "5044:5044"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    build:
+      context: kibana/
+      args:
+        elk_version: ${elk_version}
+    container_name: kibana
+    volumes:
+      - type: bind
+        source: ./kibana/config/kibana.yml
+        target: /usr/share/kibana/config/kibana.yml
+        read_only: false
+    ports:
+      - "5601:5601"
+    healthcheck:
+      test: ["CMD", "curl --silent --fail localhost:5601/status || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+  metricbeat:
+    build:
+      context: metricbeat/
+      args:
+        elk_version: ${elk_version}
+    container_name: metricbeat
+    user: root
+    command: metricbeat -e -strict.perms=false
+    privileged: true
+    volumes:
+      - type: bind
+        source: ./metricbeat/config/metricbeat.docker.yml
+        target: /usr/share/metricbeat/metricbeat.yml
+        read_only: false
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    networks:
+      - elk
+    restart: on-failure
+    depends_on:
+      - elasticsearch
+      - kibana
+    
+
+  filebeat:
+    build:
+      context: filebeat/
+      args:
+        elk_version: ${elk_version}
+    container_name: filebeat
+    user: root
+    command: filebeat -e -strict.perms=false
+    privileged: true
+    volumes:
+      - type: bind
+        source: ./filebeat/config/filebeat.yml
+        target: /usr/share/filebeat/filebeat.yml
+        read_only: false
+      - type: bind
+        source: /var/lib/docker/containers
+        target: /var/lib/docker/containers
+        read_only: true
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+      - type: bind
+        source: ./ssh_logs
+        target: /var/log/ssh_logs  
+      - type: bind
+        source: ./dvwa_logs  # Thêm volume này để thu thập log từ DVWA
+        target: /var/log/apache2
+    networks:
+      - elk
+    restart: on-failure
+    depends_on:
+      - elasticsearch
+      - kibana
+
+  heartbeat:
+    build:
+      context: heartbeat/
+      args:
+        elk_version: ${elk_version}
+    container_name: heartbeat
+    volumes:
+      - type: bind
+        source: ./heartbeat/config/heartbeat.docker.yml
+        target: /usr/share/heartbeat/heartbeat.yml
+        read_only: false
+    command: heartbeat -e --strict.perms=false 
+    privileged: true
+    networks:
+      - elk
+    restart: on-failure
+    depends_on:
+      - elasticsearch
+      - kibana
+  
+  ubuntu-ssh-rsyslog:
+    build:
+      context: ./ubuntu
+    container_name: ubuntu-ssh-rsyslog
+    ports:
+      - "2222:22"
+    volumes:
+      - type: bind
+        source: ./ubuntu/config
+        target: /etc/ubuntu/config
+      - type: bind
+        source: ./ssh_logs
+        target: /var/log
+    environment:
+      - TZ=UTC
+    tty: true
+    networks:
+      - elk
+    healthcheck:  # Thêm healthcheck
+      test: ["CMD", "nc", "-z", "localhost", "22"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  hydra:
+    build:
+      context: ./hydra  # Đường dẫn đến thư mục chứa Dockerfile
+    container_name: hydra_new
+    volumes:
+      - type: bind
+        source: \ssh_logs  # Gắn thư mục ssh_logs từ host vào container
+        target: /files  # Gắn thư mục vào /files trong container
+    tty: true
+    networks:
+      - elk
+  dvwa:
+    container_name: dvwa
+    build:
+      context: ./dvwa
+      dockerfile: Dockerfile 
+    ports:
+      - "8080:80"
+    volumes:
+      - ./dvwa_logs:/var/log/apache2
+    networks:
+     - elk 
+  ai:
+    container_name: ai
+    build:
+      context: ./AI
+    expose:
+      - "5010"
+    networks:
+     - elk 
+networks:
+  elk:
+    driver: bridge
+
+volumes:
+  elasticsearch:
+  filebeat:
+  
